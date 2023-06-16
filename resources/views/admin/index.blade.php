@@ -69,7 +69,7 @@
                         <td scope="col" class="text-center">{{ $d->alamat }}</td>
                         <td scope="col" class="text-center">{{ $d->status }}</td>
                         <td scope="col" class="text-center">
-                            <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama="{{$d->nama}}" data-kateogri="{{$d->kateogri_id}}" data-satuan="{{$d->satuan_id}}" data-stok="{{$d->stok}}" data-harga="{{$d->harga}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></a>
+                            <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama="{{$d->nama}}" data-noporsi="{{$d->noporsi}}" data-email="{{$d->email}}" data-alamat="{{$d->alamat}}" data-status="{{$d->status}}" data-telepon="{{$d->telepon}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></a>
                             <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('adminpendaftarandelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
@@ -127,20 +127,20 @@
         let button = $(event.relatedTarget)
         let id = button.data('id')
         let nama = button.data('nama')
-        let kategori_id = button.data('kategori_id')
-        let satuan_id = button.data('satuan_id')
-        let supplier_id = button.data('supplier_id')
-        let stok = button.data('stok')
-        let harga = button.data('harga')
+        let noporsi = button.data('noporsi')
+        let email = button.data('email')
+        let alamat = button.data('alamat')
+        let status = button.data('status')
+        let telepon = button.data('telepon')
         let modal = $(this)
 
         modal.find('.modal-body #id').val(id)
         modal.find('.modal-body #nama').val(nama);
-        modal.find('.modal-body #kategori_id').val(kategori_id);
-        modal.find('.modal-body #satuan_id').val(satuan_id);
-        modal.find('.modal-body #supplier_id').val(supplier_id);
-        modal.find('.modal-body #stok').val(stok);
-        modal.find('.modal-body #harga').val(harga);
+        modal.find('.modal-body #noporsi').val(noporsi);
+        modal.find('.modal-body #email').val(email);
+        modal.find('.modal-body #alamat').val(alamat);
+        modal.find('.modal-body #status').val(status);
+        modal.find('.modal-body #telepon').val(telepon);
 
     })
 </script>

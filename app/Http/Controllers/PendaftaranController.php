@@ -22,7 +22,7 @@ class PendaftaranController extends Controller
         $data->alamat = $request->alamat;
         $data->email = $request->email;
         $data->telepon = $request->telepon;
-        $data->jeniskelamin = $request->jeniskelamin;
+        $data->jk = $request->jk;
         $data->noporsi = $request->noporsi;
         $data->status = $request->status;
         $data->jadwal_berangkat = $request->jadwal_berangkat;
@@ -44,16 +44,16 @@ class PendaftaranController extends Controller
         $data->alamat = $request->alamat;
         $data->email = $request->email;
         $data->telepon = $request->telepon;
-        $data->jeniskelamin = $request->jeniskelamin;
+        $data->jk = $request->jk;
         $data->noporsi = $request->noporsi;
         $data->status = $request->status;
         $data->jadwal_berangkat = $request->jadwal_berangkat;
-        $data->pembayaran = $request->pembayaran;
-        $data->bukti = $request->bukti;
-        $data->ktp = $request->ktp;
-        $data->kk = $request->kk;
-        $data->akte = $request->akte;
-        $data->foto = $request->foto;
+        $data->pembayaran = $request->file('pembayaran')->store('post-pembayaran');
+        $data->bukti = $request->file('bukti')->store('post-bukti');
+        $data->ktp = $request->file('ktp')->store('post-ktp');
+        $data->kk = $request->file('kk')->store('post-kk');
+        $data->akte = $request->file('akte')->store('post-akte');
+        $data->foto = $request->file('foto')->store('post-foto');
         $data->update();
 
         return back()->with('success', 'Data Berhasil Diubah.');

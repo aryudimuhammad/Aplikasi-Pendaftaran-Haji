@@ -19,7 +19,7 @@ class CreatePendaftaransTable extends Migration
             $table->string('email')->nullable();;
             $table->string('alamat')->nullable();
             $table->string('telepon')->nullable();
-            $table->string('jeniskelamin')->nullable();
+            $table->string('jk')->nullable();
             $table->string('ktp')->nullable();
             $table->string('kk')->nullable();
             $table->string('akte')->nullable();

@@ -165,7 +165,7 @@
                     <form>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="email">Email address</label>
+                    <label for="email">E-mail</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email">
                   </div>
 

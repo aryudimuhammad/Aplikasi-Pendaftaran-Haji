@@ -147,10 +147,28 @@
 
                             <b>PROSEDUR PENDAFTARAN HAJI SECARA ONLINE</b>
                             <p>
-                            1. Mengisi data dan mendaftar persyaratan Haji pada <a href="#interests">Kemenag Pendaftaran Haji</a>.<br>
-                            2. Menginput SPPH ( Surat Pendaftaran Pergi Haji ) lembar kesatu yang disimpan jemaah yang menunjukkan NOMOR PORSI. <br>
-                            3. Menginput Hasil Scan Bukti Setoran Lunas dari Bank Penerima Setoran. <br>
-                            4. Menunggu Verifikasi dari Admin.
+                            1. Datang ke Bank Penerima Setoran (BPS) Syariah untuk membuka rekening tabungan haji dengan setoran minimal Rp. 25.000.000,- ( dua puluh lima juta rupiah ).<br>
+                            2. Meminta untuk diterbitkan NOMOR VALIDASI oleh Bank (Masa berlaku NOMOR VALIDASI 5 hari kerja terhitung setelah menerima dari BANK).<br>
+                            3. Mengisi data dan mendaftar persyaratan Haji pada <a href="#interests">Kemenag Pendaftaran Haji</a>.<br>
+                            4. Jika Calon Jemaah Haji sudah Menerima Bukti Setoran lunas dari bank penerima setoran. <br>
+                            5. Maka proses administrator dan info mengenai tahun keberangkatan calon jemaah haji akan muncul.
+                            </p>
+                            <br>
+                            <br>
+                            <img src="{{asset('front/sistem.png')}}" alt="usulan" style="width: 1000px;">
+
+                            <br>
+                            <b>BANK PENERIMA SETORAN ( BPS ) SYARIAH</b>
+                            <p>
+                            1. Bank BNI Syariah <br>
+                            2. Bank BRI Syariah <br>
+                            3. Bank Syariah Mandiri <br>
+                            4. Bank Panin Dubai Syariah <br>
+                            5. Bank BTN Syariah <br>
+                            6. Bank Mega Syariah <br>
+                            7. Bank Muamalat <br>
+                            8. Bank CIMB- Niaga Syariah <br>
+                            9. Bank Permata Syariah
                             </p>
                         </div>
                     </div>
@@ -193,6 +211,30 @@
                   </select>
                 </div>
 
+                <div class="form-group">
+                    <label for="novaldi">Nomor Validasi</label>
+                    <input type="novaldi" class="form-control" id="novaldi" placeholder="Nomor Validasi dari Bank">
+                </div>
+
+                  <div class="form-group">
+                    <label for="setawal">File Bukti Setoran Awal BPIH</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="setawal">
+                        <label class="custom-file-label" for="setawal">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="setakhir">File Bukti Setoran lunas dari bank penerima setoran <small><a class="text-red">*Tidak usah di isi Jika Belum Lunas</a></small></label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="setakhir">
+                        <label class="custom-file-label" for="setakhir">Choose file</label>
+                      </div>
+                    </div>
+                  </div>
 
                   <div class="form-group">
                     <label for="ktp">File input KTP </label>

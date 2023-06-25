@@ -22,9 +22,36 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123'),
             'role' => 1,
-            'alamat' => 'jln.Rahayu',
-            'telepon' => '08215123823',
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'user',
+            'email' => 'user@gmail.com',
+            'password' => Hash::make('123'),
+            'role' => 2,
+        ]);
+
+        DB::table('pendaftarans')->insert([
+            'user_id' => 2,
+            'alamat' => 'Jl.Cendrawasih No 39',
+            'telepon' => '09821675213',
+            'jk' => "Laki-Laki",
+            'status' => 1,
+        ]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

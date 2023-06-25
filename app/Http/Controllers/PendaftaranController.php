@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class PendaftaranController extends Controller
 {
+    public function pendaftaran()
+    {
+
+        return view('welcomeuser');
+    }
+
     public function index()
     {
         $data = Pendaftaran::orderBy('id', 'desc')->get();

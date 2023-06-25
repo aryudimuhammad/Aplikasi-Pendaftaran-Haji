@@ -15,8 +15,7 @@ class CreatePendaftaransTable extends Migration
     {
         Schema::create('pendaftarans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->nullable();;
-            $table->string('email')->nullable();;
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('alamat')->nullable();
             $table->string('telepon')->nullable();
             $table->string('jk')->nullable();
@@ -29,6 +28,7 @@ class CreatePendaftaransTable extends Migration
             $table->string('bukti')->nullable();
             $table->string('jadwal_berangkat')->nullable();
             $table->string('status')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->timestamps();
         });
     }

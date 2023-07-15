@@ -55,7 +55,13 @@
                     <th scope="col" class="text-center">Nama</th>
                     <th scope="col" class="text-center">Email</th>
                     <th scope="col" class="text-center">Alamat</th>
-                    <th scope="col" class="text-center">Status</th>
+                    <th scope="col" class="text-center">Foto</th>
+                    <th scope="col" class="text-center">KK</th>
+                    <th scope="col" class="text-center">Akte</th>
+                    <th scope="col" class="text-center">KTP</th>
+                    <th scope="col" class="text-center">Pembayaran</th>
+                    <th scope="col" class="text-center">Bukti</th>
+                    {{-- <th scope="col" class="text-center">Status</th> --}}
                     <th scope="col" class="text-center">Aksi</th>
                   </tr>
                   </thead>
@@ -64,10 +70,16 @@
                     <tr>
                         <td scope="col" class="text-center">{{ $loop->iteration }}</td>
                         <td scope="col" class="text-center">{{ $d->noporsi }}</td>
-                        <td scope="col" class="text-center">{{ $d->nama }}</td>
-                        <td scope="col" class="text-center">{{ $d->email }}</td>
+                        <td scope="col" class="text-center">{{ $d->user->name }}</td>
+                        <td scope="col" class="text-center">{{ $d->user->email }}</td>
                         <td scope="col" class="text-center">{{ $d->alamat }}</td>
-                        <td scope="col" class="text-center">{{ $d->status }}</td>
+                        <td><a class="btn btn-info" href="{{ asset('public/foto/'.$d->foto   ) }}" target="_blank">Lihat</a></td>
+                        <td><a class="btn btn-info" href="{{ asset('public/kk/'.$d->kk   ) }}" target="_blank">Lihat</a></td>
+                        <td><a class="btn btn-info" href="{{ asset('public/akte/'.$d->akte   ) }}" target="_blank">Lihat</a></td>
+                        <td><a class="btn btn-info" href="{{ asset('public/ktp/'.$d->ktp   ) }}" target="_blank">Lihat</a></td>
+                        <td><a class="btn btn-info" href="{{ asset('public/pembayaran/'.$d->pembayaran   ) }}" target="_blank">Lihat</a></td>
+                        <td><a class="btn btn-info" href="{{ asset('public/bukti/'.$d->bukti   ) }}" target="_blank">Lihat</a></td>
+                        {{-- <td scope="col" class="text-center">{{ $d->status }}</td> --}}
                         <td scope="col" class="text-center">
                             <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama="{{$d->nama}}" data-noporsi="{{$d->noporsi}}" data-email="{{$d->email}}" data-alamat="{{$d->alamat}}" data-status="{{$d->status}}" data-telepon="{{$d->telepon}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></a>
                             <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('adminpendaftarandelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>

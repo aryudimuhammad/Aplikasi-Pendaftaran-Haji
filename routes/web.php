@@ -26,6 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth', 'Checkrole:2']], function ()
 {
 Route::get('/user', [App\Http\Controllers\PendaftaranController::class, 'pendaftaran'])->name('pendaftaran');
+Route::post('/user', [App\Http\Controllers\PendaftaranUserController::class, 'store'])->name('pendaftaranstore');
 });
 
 Route::group(['middleware' => ['auth', 'Checkrole:1']], function ()

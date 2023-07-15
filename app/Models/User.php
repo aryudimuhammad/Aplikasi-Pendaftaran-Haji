@@ -24,6 +24,11 @@ class User extends Authenticatable
         'role',
     ];
 
+    public function pendaftaran()
+    {
+        return $this->HasMany(Pendaftaran::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

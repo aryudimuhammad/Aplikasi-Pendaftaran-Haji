@@ -2,39 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use Illuminate\Support\Facades\Hash;
 use App\Models\Pendaftaran;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class PendaftaranController extends Controller
+class PendaftaranUserController extends Controller
 {
-    public function pendaftaran()
-    {
-        $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
-
-        return view('welcomeuser', compact('data'));
-    }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $data = Pendaftaran::orderBy('id', 'desc')->get();
-
-        return view('admin.index', compact('data'));
+        //
     }
 
-    public function create(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $user = new User;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->role = 2;
-        $user->save();
 
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $data =  new Pendaftaran;
-        $data->user_id = $user->id;
+        $data->user_id = $request->user_id;
         $data->alamat = $request->alamat;
         $data->telepon = $request->telepon;
         $data->jk = $request->jk;
@@ -47,6 +50,7 @@ class PendaftaranController extends Controller
         // $data->kk = $request->file('kk')->store('post-kk');
         // $data->akte = $request->file('akte')->store('post-akte');
         // $data->foto = $request->file('foto')->store('post-foto');
+        // dd($data);
         $data->save();
 
         $pendaftaran_id = $data->id;
@@ -108,36 +112,51 @@ class PendaftaranController extends Controller
         }
         $upload->update();
 
-        return back()->with('success', 'Data Berhasil Ditambahkan.');
+        return redirect()->route('pendaftaran')->withSuccess('Data Berhasil Disimpan');
     }
 
-    public function edit(Request $request)
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
-        $data = Pendaftaran::find($request->id);
-        $data->nama = $request->nama;
-        $data->alamat = $request->alamat;
-        $data->email = $request->email;
-        $data->telepon = $request->telepon;
-        $data->jk = $request->jk;
-        $data->noporsi = $request->noporsi;
-        $data->status = $request->status;
-        $data->jadwal_berangkat = $request->jadwal_berangkat;
-        $data->pembayaran = $request->file('pembayaran')->store('post-pembayaran');
-        $data->bukti = $request->file('bukti')->store('post-bukti');
-        $data->ktp = $request->file('ktp')->store('post-ktp');
-        $data->kk = $request->file('kk')->store('post-kk');
-        $data->akte = $request->file('akte')->store('post-akte');
-        $data->foto = $request->file('foto')->store('post-foto');
-        $data->update();
-
-        return back()->with('success', 'Data Berhasil Diubah.');
+        //
     }
 
-    public function delete($id)
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
-        $data = Pendaftaran::find($id);
-        $data->delete();
+        //
+    }
 
-        return back()->with('success', 'Data Berhasil Dihapus.');
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

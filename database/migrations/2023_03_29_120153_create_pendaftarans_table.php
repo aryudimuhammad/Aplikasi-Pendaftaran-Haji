@@ -19,14 +19,10 @@ class CreatePendaftaransTable extends Migration
             $table->string('alamat')->nullable();
             $table->string('telepon')->nullable();
             $table->string('jk')->nullable();
-            $table->string('ktp')->nullable();
-            $table->string('kk')->nullable();
-            $table->string('akte')->nullable();
-            $table->string('foto')->nullable();
+            $table->date('tahun')->nullable();
             $table->string('noporsi')->nullable();
-            $table->string('pembayaran')->nullable();
-            $table->string('bukti')->nullable();
-            $table->string('jadwal_berangkat')->nullable();
+            $table->string('persyaratan')->nullable();
+            $table->string('total_pembayaran')->nullable();
             $table->string('status')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->timestamps();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Pendaftaran;
+use App\Models\Pembayaran;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,18 @@ class PendaftaranController extends Controller
     public function pendaftaran()
     {
         $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
+        if($data == null)
+        {
+            $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
+            return view('welcomeuser', compact('data'));
+        }
+        else
+        {
+            $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
+            $pembayaran = Pembayaran::where('pendaftaran_id', '=', $data->id)->get();
+            return view('welcomeuser', compact('data', 'pembayaran'));
+        }
 
-        return view('welcomeuser', compact('data'));
     }
 
     public function index()
@@ -22,6 +33,21 @@ class PendaftaranController extends Controller
         $data = Pendaftaran::orderBy('id', 'desc')->get();
 
         return view('admin.index', compact('data'));
+    }
+
+    public function show($id)
+    {
+        $pendaftaran = Pendaftaran::findOrFail($id);
+        $data = Pembayaran::where('pendaftaran_id', $pendaftaran->id)->get();
+
+        return view('admin.show', compact('data'));
+    }
+
+    public function edit($id)
+    {
+        $data = Pendaftaran::findOrFail($id);
+
+        return view('admin.edit', compact('data'));
     }
 
     public function create(Request $request)
@@ -41,96 +67,47 @@ class PendaftaranController extends Controller
         $data->noporsi = $request->noporsi;
         $data->status = $request->status;
         $data->jadwal_berangkat = $request->jadwal_berangkat;
-        // $data->pembayaran = $request->file('pembayaran')->store('post-pembayaran');
-        // $data->bukti = $request->file('bukti')->store('post-bukti');
-        // $data->ktp = $request->file('ktp')->store('post-ktp');
-        // $data->kk = $request->file('kk')->store('post-kk');
-        // $data->akte = $request->file('akte')->store('post-akte');
-        // $data->foto = $request->file('foto')->store('post-foto');
         $data->save();
 
         $pendaftaran_id = $data->id;
         $upload = pendaftaran::findOrFail($pendaftaran_id);
 
-        if($request->foto != null)
+        if($request->persyaratan != null)
         {
-            $img = $request->file('foto');
+            $img = $request->file('persyaratan');
             $FotoExt  = $img->getClientOriginalExtension();
             $FotoName = $pendaftaran_id;
             $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/foto', $foto);
-            $upload->foto       = $foto;
-        }
-        if($request->pembayaran != null)
-        {
-            $img = $request->file('pembayaran');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/pembayaran', $foto);
-            $upload->pembayaran       = $foto;
-        }
-        if($request->bukti != null)
-        {
-            $img = $request->file('bukti');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/bukti', $foto);
-            $upload->bukti       = $foto;
-        }
-        if($request->ktp != null)
-        {
-            $img = $request->file('ktp');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/ktp', $foto);
-            $upload->ktp       = $foto;
-        }
-        if($request->kk != null)
-        {
-            $img = $request->file('kk');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/kk', $foto);
-            $upload->kk       = $foto;
-        }
-        if($request->akte != null)
-        {
-            $img = $request->file('akte');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/akte', $foto);
-            $upload->akte       = $foto;
+            $img->move('public/persyaratan', $foto);
+            $upload->persyaratan       = $foto;
         }
         $upload->update();
 
-        return back()->with('success', 'Data Berhasil Ditambahkan.');
+        return back()->withSuccess('Data Berhasil Ditambahkan.');
     }
 
-    public function edit(Request $request)
+    public function update(Request $request, $id)
     {
-        $data = Pendaftaran::find($request->id);
-        $data->nama = $request->nama;
+        $data = Pendaftaran::find($id);
+        $find = $data->user_id;
+        $user = User::where('id', $find)->first();
+
+        $user->name = $request->name;
+        if($request->password)
+        {
+            $user->password = Hash::make($request->password);
+        }
         $data->alamat = $request->alamat;
-        $data->email = $request->email;
         $data->telepon = $request->telepon;
         $data->jk = $request->jk;
         $data->noporsi = $request->noporsi;
         $data->status = $request->status;
-        $data->jadwal_berangkat = $request->jadwal_berangkat;
-        $data->pembayaran = $request->file('pembayaran')->store('post-pembayaran');
-        $data->bukti = $request->file('bukti')->store('post-bukti');
-        $data->ktp = $request->file('ktp')->store('post-ktp');
-        $data->kk = $request->file('kk')->store('post-kk');
-        $data->akte = $request->file('akte')->store('post-akte');
-        $data->foto = $request->file('foto')->store('post-foto');
+        $data->tahun = $request->tahun;
+        $data->tahun = $request->tahun;
         $data->update();
+        $user->update();
 
-        return back()->with('success', 'Data Berhasil Diubah.');
+        return redirect()->route('adminpendaftaran')->withSuccess( 'Data Berhasil Diubah.');
     }
 
     public function delete($id)
@@ -138,6 +115,6 @@ class PendaftaranController extends Controller
         $data = Pendaftaran::find($id);
         $data->delete();
 
-        return back()->with('success', 'Data Berhasil Dihapus.');
+        return back()->withSuccess( 'Data Berhasil Dihapus.');
     }
 }

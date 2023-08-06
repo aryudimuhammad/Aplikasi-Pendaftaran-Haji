@@ -65,32 +65,10 @@
                             @error('noporsi')<div class="invalid-feedback"> {{$message}} </div>@enderror
                         </div>
 
-                        <label for="pembayaran">Pembayaran Tahap 1</label>
+                        <label for="persyaratan">persyaratan </label>
                         <div class="form-group">
-                            <input type="file" class="form-control" id="pembayaran" name="pembayaran" value="{{old('pembayaran')}}">
+                            <input type="file" class="form-control" id="persyaratan" name="persyaratan" value="{{old('persyaratan')}}">
                         </div>
-                        <label for="bukti">Bukti Pembayaran Lunas</label>
-                        <div class="form-group">
-                            <input type="file" class="form-control" id="bukti" name="bukti" value="{{old('bukti')}}">
-                        </div>
-                        <label for="ktp">KTP</label>
-                        <div class="form-group">
-                            <input type="file" class="form-control" id="ktp" name="ktp" value="{{old('ktp')}}">
-                        </div>
-                        <label for="kk">Kartu Keluarga</label>
-                        <div class="form-group">
-                            <input type="file" class="form-control" id="kk" name="kk" value="{{old('kk')}}">
-                        </div>
-                        <label for="akte">Akte Kelahiran</label>
-                        <div class="form-group">
-                            <input type="file" class="form-control" id="akte" name="akte" value="{{old('akte')}}">
-                        </div>
-                        <label for="foto">Foto</label>
-                        <div class="form-group">
-                            <input type="file" class="form-control" id="foto" name="foto" value="{{old('foto')}}">
-                        </div>
-
-
                         <br>
                     </div>
                     <div class="modal-footer">

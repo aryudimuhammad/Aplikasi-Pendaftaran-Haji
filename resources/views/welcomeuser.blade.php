@@ -147,7 +147,8 @@
                             5. Scan Kartu Keluarga 1 lembar.<br>
                             6. Scan Akte Kelahiran / kutipan akta nikah. <br>
                             7. Foto terbaru berwarna 3 x dan 4 x 6 = 2 Lembar, dengan latar belakang putih dengan ketentuan : <br>
-                            Tampak wajah 80% (persen), Warna baju/kerudung harus kontras dengan latar belakang, Tidak memakai pakaian dinas, Tidak memakai kacamata, Bagi calon jemaah haji wanita wajib menggunakan busan muslimah.
+                            Tampak wajah 80% (persen), Warna baju/kerudung harus kontras dengan latar belakang, Tidak memakai pakaian dinas, Tidak memakai kacamata, Bagi calon jemaah haji wanita wajib menggunakan busan muslimah.<br>
+                            8. Persyaratan Diatas Dijadikan 1 PDF. <br>
                             </p>
 
                             <br>
@@ -187,203 +188,186 @@
             <!-- Kontak Login Awards-->
             <section class="resume-section" id="daftar">
                 <div class="resume-section-content">
-<!-- Pendaftaran Interests-->
-<section class="resume-section" id="interests">
-    <div class="resume-section-content">
-        <h2 class="mb-5">Pendaftaran Haji</h2>
+            <!-- Pendaftaran Interests-->
+            <section class="resume-section" id="interests">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Pendaftaran Haji</h2>
 
-        @if($data == null)
-        <form action="{{route('pendaftaranstore')}}" enctype="multipart/form-data" method="POST">
-            @csrf
-            <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-    <div class="card-body">
+                    @if($data == null)
+                    <form action="{{route('pendaftaranstore')}}" enctype="multipart/form-data" method="POST">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                <div class="card-body">
 
-      <div class="form-group">
-        <label for="alamat">Alamat</label>
-        <textarea type="alamat" name="alamat" class="form-control" id="alamat"> </textarea>
-      </div>
+                <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <textarea type="alamat" name="alamat" class="form-control" id="alamat"> </textarea>
+                </div>
 
-      <div class="form-group">
-        <label for="telepon">No. HP/WA</label>
-        <input type="telepon" name="telepon" class="form-control" id="telepon" placeholder="Nomor HP/WA">
-      </div>
+                <div class="form-group">
+                    <label for="telepon">No. HP/WA</label>
+                    <input type="telepon" name="telepon" class="form-control" id="telepon" placeholder="Nomor HP/WA">
+                </div>
 
-      <div class="form-group">
-      <label for="jk">Jenis Kelamin</label>
-      <br>
-      <select name="jk" class="custom-select form-control-border" id="jk">
-        <option value="Laki-Laki">Laki-Laki</option>
-        <option value="Perempuan">Perempuan</option>
-      </select>
-    </div>
+                <div class="form-group">
+                <label for="jk">Jenis Kelamin</label>
+                <br>
+                <select name="jk" class="custom-select form-control-border" id="jk">
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+                </div>
 
-    <div class="form-group">
-        <label for="novaldi">Nomor Porsi</label>
-        <input type="novaldi" name="noporsi" class="form-control" id="novaldi" placeholder="Nomor Porsi">
-    </div>
+                <div class="form-group">
+                    <label for="novaldi">Nomor Porsi</label>
+                    <input type="novaldi" name="noporsi" class="form-control" id="novaldi" placeholder="Nomor Porsi">
+                </div>
 
-      <div class="form-group">
-        <label for="setawal">File Bukti Setoran Awal BPIH</label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" name="pembayaran" class="custom-file-input" id="setawal">
-            <label class="custom-file-label" for="setawal">Choose file</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="setakhir">File Bukti Setoran lunas dari bank penerima setoran <small><a class="text-red">*Tidak usah di isi Jika Belum Lunas</a></small></label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" name="bukti" class="custom-file-input" id="setakhir">
-            <label class="custom-file-label" for="setakhir">Choose file</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="ktp">File input KTP </label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input name="ktp" type="file" class="custom-file-input" id="ktp">
-            <label class="custom-file-label" for="ktp">Choose file</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="kk">File input Kartu Keluarga </label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input name="kk" type="file" class="custom-file-input" id="kk">
-            <label class="custom-file-label" for="kk">Choose file</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="akte">File input Akte Kelahiran </label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input name="akte" type="file" class="custom-file-input" id="akte">
-            <label class="custom-file-label" for="akte">Choose file</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="foto">File input Foto </label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input name="foto" type="file" class="custom-file-input" id="foto">
-            <label class="custom-file-label" for="foto">Choose file</label>
-          </div>
-        </div>
-      </div>
+                <div class="form-group">
+                    <label for="persyaratan">File input Persyaratan </label>
+                    <div class="input-group">
+                    <div class="custom-file">
+                        <input name="persyaratan" type="file" class="custom-file-input" id="persyaratan">
+                        <label class="custom-file-label" for="persyaratan">Choose file</label>
+                    </div>
+                    </div>
+                </div>
 
 
-    </div>
-    <!-- /.card-body -->
-    <br>
-      <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+                </div>
+                <!-- /.card-body -->
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
 
-  @elseif($data == !null)
-  <form action="{{route('pendaftaranstore')}}" enctype="multipart/form-data" method="POST">
-    @csrf
+            @elseif($data == !null)
+            <form action="{{route('pembayaranstore')}}" enctype="multipart/form-data" method="POST">
+                @csrf
 
-            <div class="card-body">
+                        <div class="card-body">
+                        <div class="form-group">
+                        <label for="telepon">Nama</label>
+                        <input type="telepon" name="telepon" class="form-control" id="telepon" value="{{$data->user->name}}" placeholder="Nomor HP/WA" readonly>
+                        </div>
 
-            <div class="form-group">
-            <label for="alamat">Alamat</label>
-            <textarea type="alamat" name="alamat" class="form-control" id="alamat"> {{$data->alamat}}</textarea>
-            </div>
 
-            <div class="form-group">
-            <label for="telepon">No. HP/WA</label>
-            <input type="telepon" name="telepon" class="form-control" id="telepon" value="{{$data->telepon}}" placeholder="Nomor HP/WA">
-            </div>
+                        <div class="form-group">
+                        <label for="alamat">Alamat</label>
+                        <textarea type="alamat" name="alamat" class="form-control" id="alamat" readonly> {{$data->alamat}}</textarea>
+                        </div>
 
-            <div class="form-group">
-            <label for="jk">Jenis Kelamin</label>
-            <br>
-            <select name="jk" class="custom-select form-control-border" id="jk">
-            <option value="Laki-Laki" {{ $data->jk == "Laki-Laki" ? 'selected' : '' }}>Laki-Laki</option>
-            <option value="Perempuan" {{ $data->jk == "Perempuan" ? 'selected' : '' }}>Perempuan</option>
-            </select>
-            </div>
+                        <div class="form-group">
+                        <label for="telepon">No. HP/WA</label>
+                        <input type="telepon" name="telepon" class="form-control" id="telepon" value="{{$data->telepon}}" placeholder="Nomor HP/WA" readonly>
+                        </div>
 
-            <div class="form-group">
-            <label for="novaldi">Nomor Porsi</label>
-            <input type="novaldi" name="noporsi" class="form-control" value="{{$data->noporsi}}" id="novaldi" placeholder="Nomor Porsi">
-            </div>
+                        <div class="form-group">
+                        <label for="jk">Jenis Kelamin</label>
+                        <input type="jk" name="jk" class="form-control" id="jk" value="{{$data->jk}}" placeholder="Nomor HP/WA" readonly><br>
+                        {{-- <select name="jk" class="custom-select form-control-border" id="jk" readonly>
+                        <option value="Laki-Laki" {{ $data->jk == "Laki-Laki" ? 'selected' : '' }} readonly>Laki-Laki</option>
+                        <option value="Perempuan" {{ $data->jk == "Perempuan" ? 'selected' : '' }} readonly>Perempuan</option>
+                        </select>
+                        </div> --}}
 
-            <div class="form-group">
-            <label for="setawal">File Bukti Setoran Awal BPIH</label>
-            <div class="input-group">
-            <div class="custom-file">
-                <input type="file" name="pembayaran" class="custom-file-input" id="setawal">
-                <label class="custom-file-label" for="setawal">Choose file</label>
-            </div>
-            </div>
-            </div>
+                        <div class="form-group">
+                        <label for="novaldi">Nomor Porsi</label>
+                        <input type="novaldi" name="noporsi" class="form-control" value="{{$data->noporsi}}" id="novaldi" placeholder="Nomor Porsi" readonly>
+                        </div>
 
-            <div class="form-group">
-            <label for="setakhir">File Bukti Setoran lunas dari bank penerima setoran <small><a class="text-red">*Tidak usah di isi Jika Belum Lunas</a></small></label>
-            <div class="input-group">
-            <div class="custom-file">
-                <input type="file" name="bukti" class="custom-file-input" id="setakhir">
-                <label class="custom-file-label" for="setakhir">Choose file</label>
-            </div>
-            </div>
-            </div>
+                        {{-- <div class="form-group">
+                        <label for="persyaratan">File input Persyaratan </label>
+                        <div class="input-group">
+                        <div class="custom-file">
+                            <input name="persyaratan" type="file" class="custom-file-input" id="persyaratan">
+                            <label class="custom-file-label" for="persyaratan">Choose file</label>
+                        </div>
+                        </div>
+                        </div> --}}
 
-            <div class="form-group">
-            <label for="ktp">File input KTP </label>
-            <div class="input-group">
-            <div class="custom-file">
-                <input name="ktp" type="file" class="custom-file-input" id="ktp">
-                <label class="custom-file-label" for="ktp">Choose file</label>
-            </div>
-            </div>
-            </div>
+                        @if ($data->total_pembayaran == null)
+                        <div class="form-group">
+                            <label for="novaldi">Total Pembayaran</label>
+                            <h6>Anda Belum Melakukan Pembayaran, Jika Anda Sudah Melakukan Pembayaran Silahkan Upload Pembayaran Anda Di Bawah Ini</h6>
+                            </div>
+                        @else
+                        <div class="form-group">
+                        <label for="novaldi">Total Pembayaran</label>
+                        <h6>Rp. {{number_format($data->total_pembayaran, 0, ',', '.')}},-</h6>
+                        </div>
+                        @endif
+                @endif
+                </div>
+            </section>
 
-            <div class="form-group">
-            <label for="kk">File input Kartu Keluarga </label>
-            <div class="input-group">
-            <div class="custom-file">
-                <input name="kk" type="file" class="custom-file-input" id="kk">
-                <label class="custom-file-label" for="kk">Choose file</label>
-            </div>
-            </div>
-            </div>
+            @if($data == null)
 
-            <div class="form-group">
-            <label for="akte">File input Akte Kelahiran </label>
-            <div class="input-group">
-            <div class="custom-file">
-                <input name="akte" type="file" class="custom-file-input" id="akte">
-                <label class="custom-file-label" for="akte">Choose file</label>
-            </div>
-            </div>
-            </div>
+            @elseif($data == !null)
+                @if ($data->status == 1)
+                    <!-- Pembayaran Interests-->
+                    <section class="resume-section" id="pembayaran">
+                        <div class="resume-section-content">
+                            <h2 class="mb-5">Pembayaran</h2>
+                        <form action="{{route('pembayaranstore')}}" enctype="multipart/form-data" method="POST">
+                        @csrf
+                        <div class="card-body">
+                            <input type="hidden" name="pendaftaran_id" class="form-control" id="jumlah" value="{{$data->id}}" placeholder="Jumlah Pembayaran">
+                        <div class="form-group">
+                            <label for="jumlah">Jumlah</label>
+                            <input type="number" name="jumlah" class="form-control" id="jumlah" placeholder="Jumlah Pembayaran">
+                        </div>
+                        <div class="form-group">
+                            <label for="validasi">Nomor Validasi</label>
+                            <input type="number" name="validasi" class="form-control" id="validasi" placeholder="validasi Pembayaran">
+                        </div>
+                        <div class="form-group">
+                        <label for="bank">Bank</label>
+                        <br>
+                        <select name="bank" class="custom-select form-control-border" id="bank">
+                            <option value="BNI Syariah">BNI Syariah</option>
+                            <option value="BRI Syariah">BRI Syariah</option>
+                            <option value="Syariah Mandiri">Syariah Mandiri</option>
+                            <option value="Panin Dubai Syariah">Panin Dubai Syariah</option>
+                            <option value="BTN Syariah">BTN Syariah</option>
+                            <option value="Mega Syariah">Mega Syariah</option>
+                            <option value="Muamalat">Muamalat</option>
+                            <option value="CIMB- Niaga Syariah">CIMB- Niaga Syariah</option>
+                            <option value="Permata Syariah">Permata Syariah</option>
+                        </select>
+                        </div>
 
-            <div class="form-group">
-            <label for="foto">File input Foto </label>
-            <div class="input-group">
-            <div class="custom-file">
-                <input name="foto" type="file" class="custom-file-input" id="foto">
-                <label class="custom-file-label" for="foto">Choose file</label>
-            </div>
-            </div>
-            </div>
+                        <div class="form-group">
+                            <label for="tanggal_bayar">Tanggal Pembayaran</label>
+                            <input type="date" name="noporsi" class="form-control" id="tanggal_bayar" placeholder="Nomor Porsi">
+                        </div>
 
-  @endif
-    </div>
-</section>
-<hr class="m-0" />
+                        <div class="form-group">
+                            <label for="bukti">File input Bukti Pembayaran </label>
+                            <div class="input-group">
+                            <div class="custom-file">
+                                <input name="bukti" type="file" class="custom-file-input" id="bukti">
+                                <label class="custom-file-label" for="bukti">Choose file</label>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    </section>
+                    @elseif ($data->status == 2)
+                    <div class="form-group">
+                        <label for="novaldi">LUNAS</label>
+                        <h6>Pembayaran Anda Telah LUNAS, Silahkan Tunggu Jadwal Keberangkatan Anda</h6>
+                        @if ($data->tahun == !null)
+                        <h6>Anda Akan Berangkat pada {{Carbon\carbon::parse($data->tahun)->translatedFormat('d-F-Y')}}</h6>
+                        @endif
+                    </div>
+                    @endif
 
+                @endif
+                <hr class="m-0" />
                 </div>
             </section>
             <hr class="m-0" />

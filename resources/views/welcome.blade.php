@@ -139,7 +139,8 @@
                             5. Scan Kartu Keluarga 1 lembar.<br>
                             6. Scan Akte Kelahiran / kutipan akta nikah. <br>
                             7. Foto terbaru berwarna 3 x dan 4 x 6 = 2 Lembar, dengan latar belakang putih dengan ketentuan : <br>
-                            Tampak wajah 80% (persen), Warna baju/kerudung harus kontras dengan latar belakang, Tidak memakai pakaian dinas, Tidak memakai kacamata, Bagi calon jemaah haji wanita wajib menggunakan busan muslimah.
+                            Tampak wajah 80% (persen), Warna baju/kerudung harus kontras dengan latar belakang, Tidak memakai pakaian dinas, Tidak memakai kacamata, Bagi calon jemaah haji wanita wajib menggunakan busan muslimah.<br>
+                            8. Persyaratan Diatas Dijadikan 1 PDF. <br>
                             </p>
 
                             <br>

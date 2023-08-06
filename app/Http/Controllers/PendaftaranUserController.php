@@ -42,73 +42,20 @@ class PendaftaranUserController extends Controller
         $data->telepon = $request->telepon;
         $data->jk = $request->jk;
         $data->noporsi = $request->noporsi;
-        $data->status = $request->status;
-        $data->jadwal_berangkat = $request->jadwal_berangkat;
-        // $data->pembayaran = $request->file('pembayaran')->store('post-pembayaran');
-        // $data->bukti = $request->file('bukti')->store('post-bukti');
-        // $data->ktp = $request->file('ktp')->store('post-ktp');
-        // $data->kk = $request->file('kk')->store('post-kk');
-        // $data->akte = $request->file('akte')->store('post-akte');
-        // $data->foto = $request->file('foto')->store('post-foto');
-        // dd($data);
+        $data->status = 1;
         $data->save();
 
         $pendaftaran_id = $data->id;
         $upload = pendaftaran::findOrFail($pendaftaran_id);
 
-        if($request->foto != null)
+        if($request->persyaratan != null)
         {
-            $img = $request->file('foto');
+            $img = $request->file('persyaratan');
             $FotoExt  = $img->getClientOriginalExtension();
             $FotoName = $pendaftaran_id;
             $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/foto', $foto);
-            $upload->foto       = $foto;
-        }
-        if($request->pembayaran != null)
-        {
-            $img = $request->file('pembayaran');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/pembayaran', $foto);
-            $upload->pembayaran       = $foto;
-        }
-        if($request->bukti != null)
-        {
-            $img = $request->file('bukti');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/bukti', $foto);
-            $upload->bukti       = $foto;
-        }
-        if($request->ktp != null)
-        {
-            $img = $request->file('ktp');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/ktp', $foto);
-            $upload->ktp       = $foto;
-        }
-        if($request->kk != null)
-        {
-            $img = $request->file('kk');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/kk', $foto);
-            $upload->kk       = $foto;
-        }
-        if($request->akte != null)
-        {
-            $img = $request->file('akte');
-            $FotoExt  = $img->getClientOriginalExtension();
-            $FotoName = $data->id;
-            $foto   = $FotoName.'.'.$FotoExt;
-            $img->move('public/akte', $foto);
-            $upload->akte       = $foto;
+            $img->move('public/persyaratan', $foto);
+            $upload->persyaratan       = $foto;
         }
         $upload->update();
 

@@ -38,10 +38,14 @@
                             <span><i class="feather icon-printer"></i> Cetak Data</span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" target="_blank" href="#">Cetak Pendaftaran Haji</a>
-                                    <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetaktglmasuk">Barang Masuk</button>
-                                    <button class="dropdown-item" target="_blank" data-toggle="modal" data-target="#modalcetaktglkeluar">Barang Keluar/Terjual</button>
-                                    <a class="dropdown-item" target="_blank" href="{#" target="_blank">Barang Terlaris</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.pendaftarYearFilter')}}">Cetak Pendaftar Akun</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.pendaftarhajiYearFilter')}}">Cetak Pendaftar Haji</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.berangkathajiYearFilter')}}">Cetak Keberangkatan</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.pembatalanhajiYearFilter')}}">Cetak Pembatalan</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.pembayaranbankFilter')}}">Cetak Pembayaran Berdasarkan Bank</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.grafik')}}">Grafik Pendaftaran</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.grafikuser')}}">Grafik Akun Baru</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.pendaftarhajiYearFilter')}}">Grafik Perbandingan Pendaftaran Haji Dan Akun</a>
                         </div>
                     </div>
                 </div>
@@ -55,13 +59,9 @@
                     <th scope="col" class="text-center">Nama</th>
                     <th scope="col" class="text-center">Email</th>
                     <th scope="col" class="text-center">Alamat</th>
-                    <th scope="col" class="text-center">Foto</th>
-                    <th scope="col" class="text-center">KK</th>
-                    <th scope="col" class="text-center">Akte</th>
-                    <th scope="col" class="text-center">KTP</th>
-                    <th scope="col" class="text-center">Pembayaran</th>
-                    <th scope="col" class="text-center">Bukti</th>
-                    {{-- <th scope="col" class="text-center">Status</th> --}}
+                    <th scope="col" class="text-center">Total Pembayaran</th>
+                    <th scope="col" class="text-center">Persyaratan</th>
+                    <th scope="col" class="text-center">Status</th>
                     <th scope="col" class="text-center">Aksi</th>
                   </tr>
                   </thead>
@@ -73,15 +73,31 @@
                         <td scope="col" class="text-center">{{ $d->user->name }}</td>
                         <td scope="col" class="text-center">{{ $d->user->email }}</td>
                         <td scope="col" class="text-center">{{ $d->alamat }}</td>
-                        <td><a class="btn btn-info" href="{{ asset('public/foto/'.$d->foto   ) }}" target="_blank">Lihat</a></td>
-                        <td><a class="btn btn-info" href="{{ asset('public/kk/'.$d->kk   ) }}" target="_blank">Lihat</a></td>
-                        <td><a class="btn btn-info" href="{{ asset('public/akte/'.$d->akte   ) }}" target="_blank">Lihat</a></td>
-                        <td><a class="btn btn-info" href="{{ asset('public/ktp/'.$d->ktp   ) }}" target="_blank">Lihat</a></td>
-                        <td><a class="btn btn-info" href="{{ asset('public/pembayaran/'.$d->pembayaran   ) }}" target="_blank">Lihat</a></td>
-                        <td><a class="btn btn-info" href="{{ asset('public/bukti/'.$d->bukti   ) }}" target="_blank">Lihat</a></td>
-                        {{-- <td scope="col" class="text-center">{{ $d->status }}</td> --}}
                         <td scope="col" class="text-center">
-                            <a class="btn btn-sm btn-info text-white" data-id="{{$d->id}}" data-nama="{{$d->nama}}" data-noporsi="{{$d->noporsi}}" data-email="{{$d->email}}" data-alamat="{{$d->alamat}}" data-status="{{$d->status}}" data-telepon="{{$d->telepon}}" data-toggle="modal" data-target="#editModal"><i class="fa fa-pencil color-muted m-r-5"></i></a>
+                            @if ($d->total_pembayaran == null)
+                            -
+                            @else
+                            Rp. {{number_format($d->total_pembayaran, 0, ',', '.')}},-
+                            @endif
+                        </td>
+                        <td scope="col" class="text-center"><a class="btn btn-info" href="{{ asset('public/persyaratan/'.$d->persyaratan) }}" target="_blank">Lihat</a></td>
+                        <td scope="col" class="text-center">
+                            @if ($d->status == 1)
+                                Belum Lunas
+                                @elseif ($d->status == 2)
+                                Lunas
+                            @endif
+                        </td>
+                        <td scope="col" class="text-center">
+                            <a class="btn btn-sm btn-info text-white" href="{{ route('pembayaran.index', $d->id) }}">
+                                <i class="fas fa-eye"></i>
+                              </a>
+                              @if ($d->total_pembayaran == !null)
+                              <a class="btn btn-sm btn-info text-white" href="{{ route('report.pembayaranuser', $d->id) }}">
+                                <i class="fas fa-print"></i>
+                              </a>
+                              @endif
+                            <a class="btn btn-sm btn-info text-white" href="{{route('adminpendaftaranedit', $d->id)}}"><i class="fa fa-pencil color-muted m-r-5"></i></a>
                             <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('adminpendaftarandelete',$d->id) }}"> <i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
@@ -96,7 +112,6 @@
     </div>
 </section>
 @include('admin.create')
-@include('admin.edit')
 @include('admin.delete')
 @include('admin.cetaktglmasuk')
 @include('admin.cetaktglkeluar')
@@ -132,41 +147,6 @@
       "responsive": true,
     });
   });
-</script>
-
-<script>
-    $('#editModal').on('show.bs.modal', function(event) {
-        let button = $(event.relatedTarget)
-        let id = button.data('id')
-        let nama = button.data('nama')
-        let noporsi = button.data('noporsi')
-        let email = button.data('email')
-        let alamat = button.data('alamat')
-        let status = button.data('status')
-        let telepon = button.data('telepon')
-        let modal = $(this)
-
-        modal.find('.modal-body #id').val(id)
-        modal.find('.modal-body #nama').val(nama);
-        modal.find('.modal-body #noporsi').val(noporsi);
-        modal.find('.modal-body #email').val(email);
-        modal.find('.modal-body #alamat').val(alamat);
-        modal.find('.modal-body #status').val(status);
-        modal.find('.modal-body #telepon').val(telepon);
-
-    })
-</script>
-
-<script>
-    $('#editstok').on('show.bs.modal', function(event) {
-        let button = $(event.relatedTarget)
-        let id = button.data('id')
-        let stok = button.data('stok')
-        let modal = $(this)
-
-        modal.find('.modal-body #id').val(id)
-        modal.find('.modal-body #stok').val(stok);
-    })
 </script>
 
 <script>

@@ -33,61 +33,11 @@
             </div>
 
             <div class="form-group">
-                <label for="setawal">File Bukti Setoran Awal BPIH</label>
+                <label for="persyaratan">File input Persyaratan </label>
                 <div class="input-group">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="setawal">
-                    <label class="custom-file-label" for="setawal">Choose file</label>
-                </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="setakhir">File Bukti Setoran lunas dari bank penerima setoran <small><a class="text-red">*Tidak usah di isi Jika Belum Lunas</a></small></label>
-                <div class="input-group">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="setakhir">
-                    <label class="custom-file-label" for="setakhir">Choose file</label>
-                </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="ktp">File input KTP </label>
-                <div class="input-group">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="ktp">
-                    <label class="custom-file-label" for="ktp">Choose file</label>
-                </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="kk">File input Kartu Keluarga </label>
-                <div class="input-group">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="kk">
-                    <label class="custom-file-label" for="kk">Choose file</label>
-                </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="akte">File input Akte Kelahiran </label>
-                <div class="input-group">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="akte">
-                    <label class="custom-file-label" for="akte">Choose file</label>
-                </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="foto">File input Foto </label>
-                <div class="input-group">
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="foto">
-                    <label class="custom-file-label" for="foto">Choose file</label>
+                    <input type="file" class="custom-file-input" id="persyaratan">
+                    <label class="custom-file-label" for="persyaratan">Choose file</label>
                 </div>
                 </div>
             </div>

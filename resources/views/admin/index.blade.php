@@ -86,6 +86,8 @@
                                 Belum Lunas
                                 @elseif ($d->status == 2)
                                 Lunas
+                                @elseif ($d->status == 3)
+                                Dibatalkan
                             @endif
                         </td>
                         <td scope="col" class="text-center">

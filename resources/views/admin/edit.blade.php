@@ -89,6 +89,7 @@
                                         <select name="status" class="custom-select form-control-border" id="status">
                                             <option value="1" {{ $data->status == "1" ? 'selected' : '' }}>Belum Lunas</option>
                                             <option value="2" {{ $data->status == "2" ? 'selected' : '' }}>Lunas</option>
+                                            <option value="3" {{ $data->status == "3" ? 'selected' : '' }}>Dibatalkan</option>
                                         </select>
                                         </div>
 

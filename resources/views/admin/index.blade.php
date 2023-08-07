@@ -45,7 +45,6 @@
                                     <a class="dropdown-item" target="_blank" href="{{route('report.pembayaranbankFilter')}}">Cetak Pembayaran Berdasarkan Bank</a>
                                     <a class="dropdown-item" target="_blank" href="{{route('report.grafik')}}">Grafik Pendaftaran</a>
                                     <a class="dropdown-item" target="_blank" href="{{route('report.grafikuser')}}">Grafik Akun Baru</a>
-                                    <a class="dropdown-item" target="_blank" href="{{route('report.pendaftarhajiYearFilter')}}">Grafik Perbandingan Pendaftaran Haji Dan Akun</a>
                         </div>
                     </div>
                 </div>

@@ -42,12 +42,12 @@
             </a>
           </li>
 
-        <li class="nav-item menu-open">
+        <!-- <li class="nav-item menu-open">
             <a href="#" class="nav-link">
             <i class="fa-sharp fa-solid fa-users"></i>
             <p>User</p>
             </a>
-        </li>
+        </li> -->
 
         <!-- <li class="nav-item menu-open">
             <a href="/" class="nav-link">

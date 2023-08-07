@@ -66,7 +66,6 @@ class PendaftaranController extends Controller
         $data->jk = $request->jk;
         $data->noporsi = $request->noporsi;
         $data->status = $request->status;
-        $data->jadwal_berangkat = $request->jadwal_berangkat;
         $data->save();
 
         $pendaftaran_id = $data->id;

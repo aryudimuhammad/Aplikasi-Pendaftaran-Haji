@@ -17,12 +17,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        $faker = Faker::create('id_ID');
         DB::table('users')->insert([
+
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123'),
             'role' => 1,
+            'created_at' => $faker->date('2023,07,02'),
         ]);
 
 
@@ -34,6 +36,7 @@ class DatabaseSeeder extends Seeder
                     'email' => $faker->email,
                     'password' => Hash::make('123'),
                     'role' => 2,
+                    'created_at' => $faker->date('2023,07,02'),
                 ]);
             }
 
@@ -44,6 +47,7 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '1',
+                'created_at' => $faker->date('2023,07,02'),
             ]);
 
             DB::table('pendaftarans')->insert([
@@ -52,6 +56,7 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '1',
+                'created_at' => $faker->date('2023,07,02'),
             ]);
 
             DB::table('pendaftarans')->insert([
@@ -60,6 +65,7 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '1',
+                'created_at' => $faker->date('2023,07,02'),
             ]);
 
             DB::table('pendaftarans')->insert([
@@ -68,6 +74,7 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '1',
+                'created_at' => $faker->date('2023,07,02'),
             ]);
 
             DB::table('pendaftarans')->insert([
@@ -76,6 +83,7 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '1',
+                'created_at' => $faker->date('2023,07,02'),
             ]);
 
             DB::table('pendaftarans')->insert([
@@ -84,7 +92,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '2',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
                 'total_pembayaran' => 49800000,
                 'persyaratan' => '16.pdf',
@@ -95,7 +104,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '2',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
                 'total_pembayaran' => 49800000,
                 'persyaratan' => '16.pdf',
@@ -106,7 +116,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '2',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
                 'total_pembayaran' => 49800000,
                 'persyaratan' => '16.pdf',
@@ -117,7 +128,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '2',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
                 'total_pembayaran' => 49800000,
                 'persyaratan' => '16.pdf',
@@ -128,7 +140,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '2',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
                 'total_pembayaran' => 49800000,
                 'persyaratan' => '16.pdf',
@@ -139,7 +152,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '3',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
             ]);
             DB::table('pendaftarans')->insert([
@@ -148,7 +162,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '3',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
             ]);
             DB::table('pendaftarans')->insert([
@@ -157,7 +172,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '3',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
             ]);
             DB::table('pendaftarans')->insert([
@@ -166,7 +182,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '3',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
             ]);
             DB::table('pendaftarans')->insert([
@@ -175,7 +192,8 @@ class DatabaseSeeder extends Seeder
                 'telepon' => $faker->phoneNumber(),
                 'jk' => 'Perempuan',
                 'status' => '3',
-                'tahun' => $faker->date(),
+                'created_at' => $faker->date('2023,07,02'),
+                'tahun' => $faker->date('2023,07,02'),
                 'noporsi' => $faker->unique()->randomNumber(5,true),
             ]);
 
@@ -187,6 +205,19 @@ class DatabaseSeeder extends Seeder
 
 
 
+            $faker = Faker::create('id_ID');
+
+            for ($i = 0; $i < 5; $i++) {
+                DB::table('pembayarans')->insert([
+                    'pendaftaran_id' => $faker->unique()->numberBetween(6,10),
+                    'bank' => 'BNI Syariah',
+                    'jumlah' => 49800000,
+                    'tanggal_bayar' => $faker->date('2023,07,02'),
+                    'bukti' => 'bni.jpg',
+                    'validasi' => $faker->unique()->randomNumber(5,true),
+                    'created_at' => $faker->date('2023,07,02'),
+                ]);
+            }
 
 
 

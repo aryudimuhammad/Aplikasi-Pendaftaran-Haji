@@ -40,6 +40,11 @@ Route::get('/admin/pendaftaran/{id}', [App\Http\Controllers\PendaftaranControlle
 Route::put('/admin/pendaftaran/{id}', [App\Http\Controllers\PendaftaranController::class, 'update'])->name('adminpendaftaranupdate');
 Route::delete('/admin/pendaftaran/{id}', [App\Http\Controllers\PendaftaranController::class, 'delete'])->name('adminpendaftarandelete');
 
+// revisi
+Route::get('/admin/proseskeberangkatan', [App\Http\Controllers\ProseskeberangkatanController::class, 'index'])->name('adminproseskeberangkatan');
+Route::put('/admin/proseskeberangkatan/{id}', [App\Http\Controllers\ProseskeberangkatanController::class, 'edit'])->name('adminproseskeberangkatanedit');
+// ---
+
 Route::resource('pembayaran', PembayaranAdminController::class)->except('index', 'create', 'show', 'edit');
 Route::name('pembayaran.')->prefix('pembayaran')->group(function () {
     Route::get('/index/{id}', [PembayaranAdminController::class, 'index'])->name('index');

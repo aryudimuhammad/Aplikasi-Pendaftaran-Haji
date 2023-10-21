@@ -79,4 +79,14 @@ Route::prefix('report')->name('report.')->group(function () {
     Route::get('/cetak/grafik', [ReportController::class, 'grafik'])->name('grafik');
     Route::get('/cetak/grafikuser', [ReportController::class, 'grafikuser'])->name('grafikuser');
 
+    Route::get('/cetak/proseskeberangkatan', [ReportController::class, 'prosessemua'])->name('prosessemua');
+    Route::get('/cetak/proseskeberangkatan1', [ReportController::class, 'proses1'])->name('proses1');
+    Route::get('/cetak/proseskeberangkatan2', [ReportController::class, 'proses2'])->name('proses2');
+    Route::get('/cetak/proseskeberangkatan3', [ReportController::class, 'proses3'])->name('proses3');
+    Route::get('/cetak/proseskeberangkatan4', [ReportController::class, 'proses4'])->name('proses4');
+    Route::get('/cetak/proseskeberangkatan5', [ReportController::class, 'proses5'])->name('proses5');
+    Route::get('/cetak/proseskeberangkatan6', [ReportController::class, 'proses6'])->name('proses6');
+    Route::get('/cetak/proseskeberangkatan7', [ReportController::class, 'proses7'])->name('proses7');
+    Route::get('/cetak/proseskeberangkatan8', [ReportController::class, 'proses8'])->name('proses8');
+    Route::get('/cetak/proseskeberangkatan9', [ReportController::class, 'proses9'])->name('proses9');
 });

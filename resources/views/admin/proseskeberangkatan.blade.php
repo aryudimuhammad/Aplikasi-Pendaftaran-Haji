@@ -10,13 +10,27 @@
 <div class="content-header">
     <div class="container-fluid">
     <div class="row mb-2">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
         <h1 class="m-0">Proses Keberangkatan</h1>
         </div>
-        <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Proses Keberangkatan</a></li>
-        </ol>
+        <div class="col-sm-8">
+        <div class="dropdown" style="float: left;">
+                        <button class="btn btn-outline-info dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span><i class="feather icon-printer"></i> Cetak Data</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.prosessemua')}}">Cetak Semua Proses</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses1')}}">Cetak Proses 1</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses2')}}">Cetak Proses 2</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses3')}}">Cetak Proses 3</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses4')}}">Cetak Proses 4</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses5')}}">Cetak Proses 5</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses6')}}">Cetak Proses 6</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses7')}}">Cetak Proses 7</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses8')}}">Cetak Proses 8</a>
+                                    <a class="dropdown-item" target="_blank" href="{{route('report.proses9')}}">Cetak Proses 9</a>
+                        </div>
+                    </div>
         </div>
     </div>
     </div>

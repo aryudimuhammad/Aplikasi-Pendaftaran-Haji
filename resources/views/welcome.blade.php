@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Persiapan Haji</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/user">Persiapan Haji</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#cara">Tata Cara Pendaftaran</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/user">Pendaftaran Haji</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Kontak</a></li>
@@ -50,7 +50,7 @@
             </section>
             <hr class="m-0" />
             <!-- Experience-->
-            <section class="resume-section" id="experience">
+            <!-- <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Persiapan Keberangkatan Haji</h2>
                     <p>Kemampuan jamaah adalah salah satu syarat wajib melaksanakan ibadah haji. Tidak hanya kemampuan finansial,
@@ -122,7 +122,7 @@
                     </div>
 
                 </div>
-            </section>
+            </section> -->
             <hr class="m-0" />
             <!-- cara-->
             <section class="resume-section" id="cara">

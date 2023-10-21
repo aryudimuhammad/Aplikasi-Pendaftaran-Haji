@@ -6,6 +6,9 @@
         <link href="{{asset('front/css/styles.css')}}" rel="stylesheet"/>
         <link rel="stylesheet" href="{{asset('front/plugins/fontawesome-free/css/all.min.css')}}">
         <link rel="stylesheet" href="{{asset('front/dist/css/adminlte.min.css')}}">
+        <style type="text/css">
+        .justify { text-align: justify;}
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -46,7 +49,7 @@
                     <div class="subheading mb-5">
                     Jl. Panglima Batur Barat No.6, Loktabat Utara, Kec. Banjarbaru Utara, Kota Banjar Baru, Kalimantan Selatan 70714</a>
                     </div>
-                    <p class="lead mb-5">kementerian Agama Kota Banjarbaru berkomitmen akan memberikan informasi yang bermanfaat bagi para pengunjung,  kami berharap masyarkat bisa memberikan masukan dan kontribusi bagi perkembangan kementerian agama kota banjarbaru dalam memberikan pelayanan kepada masyarkat. </p>
+                    <p class="justify">kementerian Agama Kota Banjarbaru berkomitmen akan memberikan informasi yang bermanfaat bagi para pengunjung,  kami berharap masyarkat bisa memberikan masukan dan kontribusi bagi perkembangan kementerian agama kota banjarbaru dalam memberikan pelayanan kepada masyarkat. </p>
                     <div class="social-icons">
                         <a class="social-icon" href="https://kemenag-banjarbaru.id/"><i class="fab fa-periscope"></i></a>
                         <a class="social-icon" href="https://www.instagram.com/kemenagkalsel/?hl=en"><i class="fab fa-instagram"></i></a>
@@ -61,71 +64,62 @@
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Persiapan Keberangkatan Haji</h2>
-                    <p>Kemampuan jamaah adalah salah satu syarat wajib melaksanakan ibadah haji. Tidak hanya kemampuan finansial,
+                    <p class="justify">Kemampuan jamaah adalah salah satu syarat wajib melaksanakan ibadah haji. Tidak hanya kemampuan finansial,
                         kemampuan fisik juga harus diperhatikan. Memiliki kondisi fisik yang prima termasuk syarat seseorang dapat menunaikan ibadah haji mengingat pelaksanaan haji cukup menguras tenaga.
                         Sejumlah rangkaian ibadah haji, seperti thawaf, sai tujuh putaran, hingga proses lempar jumrah menuntut jamaah untuk memiliki kondisi fisik yang kuat. Oleh karena itu juga, sangat penting bagi Anda untuk mempersiapkan persiapan keberangkatan haji dengan baik sebelum berangkat haji, khususnya bagi Anda yang sudah lanjut usia.
                         Berikut informasi lengkapnya.</p><br>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">1.Rutin berolahraga</h5><br>
-                            <small>Untuk menjaga kebugaran fisik, rutin berolahraga adalah jawabannya. Olahraga tertatur sangat dianjurkan bagi Anda yang ingin berangkat menunaikan ibadah haji. Tidak perlu melakukan jenis olahraga berat, Anda cukup rutin melakukan olahraga ringan, seperti jalan santai, jogging, bersepeda, atau berenang selama 30 menit setiap harinya. Dengan rutin berolahraga, tubuh Anda tidak hanya akan menjadi lebih segar atau dapat mengontrol tekanan dan gula darah saja, namun juga dapat membiasakan tubuh untuk bergerak secara teratur dan tidak kaget saat nanti melaksanakan rangkaian ibadah haji.</small>
+                            <h5 class="mb-0">1. {{$data1->olahraga}}</h5><br>
+                            <p class="justify"><small>{{$data1->olahragaisi}}</small></p>
                         </div>
                     </div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">2.Vaksinasi meningitis dan influenza</h5><br>
-                            <small>Sejak tahun 2002 lalu, pemerintah Kerajaan Arab Saudi mewajibkan seluruh jamaah haji dari semua negara untuk melakukan vaksinasi meningitis dan influenza. Kedua penyakit yang tersebar melalui virus tersebut sangat berbahaya, sehingga Anda wajib mempersiapkan kesehatan fisik dengan menerima vaksin. Untuk melakukan vaksin, Anda bisa berkunjung ke bandara-bandara yang menyiapkan klinik khusus vaksinasi. Di Jakarta, klinik khusus vaksinasi bisa Anda temukan di Bandara Halim Perdanakusuma dan Rumah Sakit Fatmawati. Biasanya, beberapa biro perjalanan haji juga memasukkan vaksinasi kedua jenis penyakit tersebut dalam paket perjalanan.</small>
+                            <h5 class="mb-0">2. {{$data1->vaksinasi}}</h5><br>
+                            <p class="justify"><small>{{$data1->vaksinasiisi}}</small></p>
                         </div>
                     </div>
-
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">3.Cek kesehatan secara menyeluruh</h5><br>
-                            <small>Sebelum menunaikan ibadah haji, Anda juga perlu untuk melakukan cek kesehatan secara menyeluruh. Konsultasikanlah keluhan kesehatan yang mungkin Anda miliki kepada dokter untuk mengatasi dan mempersiapkan fisik Anda dalam kondisi prima. Jangan menyepelekan pemeriksaan secara menyeluruh, karena menderita sakit di Tanah Suci bukan hanya merepotkan, namun juga membuat ibadah haji Anda berjalan tak lancar. Dengan melakukan pemeriksaan kesehatan secara menyeluruh, Anda dapat melakukan antisipasi dan pengobatan dini terhadap penyakit yang mungkin timbul akibat kondisi tubuh yang kelelahan atau akibat kondisi lingkungan yang baru.</small>
+                            <h5 class="mb-0">3. {{$data1->kesehatan}}</h5><br>
+                            <p class="justify"><small>{{$data1->kesehatanisi}}</small></p>
                         </div>
                     </div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">4.Istirahat yang cukup</h5><br>
-                            <small>Memastikan tubuh Anda mendapat waktu istirahat yang cukup juga penting sebagai persiapan haji. Hindari memaksakan diri untuk bekerja atau beraktivitas saat Anda sudah merasa sangat kelelahan. Bila Anda tidak memiliki waktu tidur yang cukup dan berkualitas, kesehatan Anda bisa saja terganggu menjelang jadwal keberangkatan hingga saat Anda sedang menunaikan ibadah haji di Tanah Suci. Oleh karena itu, sebaiknya perbanyak waktu istirahat sebelum melangsungkan perjalanan haji. Mengingat perjalanan dari Jakarta menuju Tanah Suci membutuhkan waktu sekitar sembilan jam, manfaatkanlah waktu tersebut untuk beristirahat agar tubuh Anda tetap fit dan sehat.</small>
+                            <h5 class="mb-0">4. {{$data1->istirahat}}</h5><br>
+                            <p class="justify"><small>{{$data1->istirahatisi}}</small></p>
                         </div>
                     </div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">5.Bawa obat-obat pribadi</h5><br>
-                            <small>Perlengkapan P3K pasti sudah disiapkan oleh biro perjalanan yang membawa Anda ke Tanah Suci. Di Mekkah, Anda juga bisa mendapati banyak posko-posko kesehatan untuk merawat jamaah haji yang jatuh sakit. Namun, Anda tetap harus membawa obat-obatan pribadi yang Anda butuhkan selama menunaikan ibadah haji. Terlebih bila Anda menderita satu jenis penyakit tertentu yang menuntut Anda untuk mengonsumsi obat yang sudah diresepkan oleh dokter. Obat-obatan pribadi yang wajib Anda bawa, seperti minyak angin, minyak gosok, obat diare, obat anti nyamuk, hingga obat alergi yang mungkin Anda butuhkan selama perjalanan.</small>
+                            <h5 class="mb-0">5. {{$data1->obat}}</h5><br>
+                            <p class="justify"><small>{{$data1->obatisi}}</small></p>
                         </div>
                     </div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">6.Mengurus Dokumen Perjalanan</h5><br>
-                            <small>Persiapan sebelum berangkat haji yang tidak kalah penting adalah mengurus dokumen perjalanan, seperti visa dan paspor. Kamu jangan mengurus dokumen-dokumen tersebut mepet sebelum waktu keberangkatan ya. Karena kalau terjadi kendala, kamu masih ada waktu untuk memperbaikinya. Alhasil kamu tidak akan mengalami kendala di bandara atau saat tiba di Tanah Suci.</small>
+                            <h5 class="mb-0">6. {{$data1->perjalanan}}</h5><br>
+                            <p class="justify"><small>{{$data1->perjalananisi}}</small></p>
                         </div>
                     </div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">7.Mempersiapkan Perlengkapan Ibadah</h5><br>
-                            <small>Persiapan lain yang perlu kamu lakukan adalah memastikan perlengkapan yang diperlukan sudah dibawa, misalnya pakaian yang sesuai dengan aturan haji, alas kaki yang nyaman, dan perlengkapan mandi dan salat.</small>
+                            <h5 class="mb-0">7. {{$data1->perlengkapan}}</h5><br>
+                            <p class="justify"><small>{{$data1->perlengkapanisi}}</small></p>
                         </div>
                     </div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">8.Selesaikan Urusan Keuangan</h5><br>
-                            <small>Pastikan kamu juga punya cukup waktu untuk menyelesaikan urusan keuangan sebelum berangkat ke Tanah Suci. Bayar semua tagihan dan pastikan bahwa kamu memiliki cukup uang untuk biaya hidup dan belanja selama di Tanah Suci.</small>
+                            <h5 class="mb-0">8. {{$data1->keuangan}}</h5><br>
+                            <p class="justify"><small>{{$data1->keuanganisi}}</small></p>
                         </div>
                     </div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <h5 class="mb-0">9.Perkuat Iman dan Takwa</h5><br>
-                            <small>Ibadah haji adalah ibadah yang sangat suci dan berat. Maka dari itu lakukan kegiatan-kegiatan yang dapat mperkuat iman dan takwa, misalnya dengan membaca Al-Qur'an, berdoa, dan mengikuti pengajian. Itu semua akan membantu mempersiapkan diri secara mental dan spiritual sebelum berangkat.</small>
+                            <h5 class="mb-0">9. {{$data1->imantaqwa}}</h5><br>
+                            <p class="justify"><small>{{$data1->imantaqwaisi}}</small></p>
                         </div>
                     </div>
 

@@ -6,6 +6,7 @@ use DB;
 use Carbon\Carbon;
 use App\Models\Pendaftaran;
 use App\Models\Pembayaran;
+use App\Models\Proseskeberangkatan;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -183,5 +184,67 @@ class ReportController extends Controller
         return view('admin.report.grafikbanding', compact('Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'
         ,'countJan','countFeb','countMar','countApr','countMei','countJun','countJul','countAgu','countSep','countOkt','countNov','countDes'));
 
+    }
+
+
+
+    public function prosessemua()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatansemua', compact('data'));
+    }
+
+    public function proses1()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan1', compact('data'));
+    }
+
+    public function proses2()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan2', compact('data'));
+    }
+
+    public function proses3()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan3', compact('data'));
+    }
+
+    public function proses4()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan4', compact('data'));
+    }
+
+    public function proses5()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan5', compact('data'));
+    }
+
+    public function proses6()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan6', compact('data'));
+    }
+
+    public function proses7()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan7', compact('data'));
+    }
+
+    public function proses8()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan8', compact('data'));
+    }
+
+    public function proses9()
+    {
+        $data = Proseskeberangkatan::where('id',1)->first();
+        return view('admin.report.proseskeberangkatan9', compact('data'));
     }
 }

@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Pendaftaran;
 use App\Models\Pembayaran;
+use App\Models\Proseskeberangkatan;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,17 +14,20 @@ class PendaftaranController extends Controller
 {
     public function pendaftaran()
     {
+
         $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
         if($data == null)
         {
+            $data1 = Proseskeberangkatan::where('id',1)->first();
             $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
-            return view('welcomeuser', compact('data'));
+            return view('welcomeuser', compact('data','data1'));
         }
         else
         {
             $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
             $pembayaran = Pembayaran::where('pendaftaran_id', '=', $data->id)->get();
-            return view('welcomeuser', compact('data', 'pembayaran'));
+            $data1 = Proseskeberangkatan::where('id',1)->first();
+            return view('welcomeuser', compact('data', 'pembayaran','data1'));
         }
 
     }

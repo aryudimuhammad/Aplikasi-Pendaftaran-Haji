@@ -131,17 +131,14 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <b class="mb-0">PERSYARATAN PENDAFTARAN HAJI</b><br>
-                            <p>
-                            1. Beragama Islam. <br>
-                            2. Berusia Minimal 12 Tahun pada saat pendaftaran. <br>
-                            3. Bagi yang sudah haji, bisa mendaftar kembali setelah 10 (sepuluh) tahun keberangkatan haji terakhir. <br>
-                            4. Scan KTP yang masih berlaku sesuai dengan domisili 3 lembar. <br>
-                            5. Scan Kartu Keluarga 1 lembar.<br>
-                            6. Scan Akte Kelahiran / kutipan akta nikah. <br>
-                            7. Foto terbaru berwarna 3 x dan 4 x 6 = 2 Lembar, dengan latar belakang putih dengan ketentuan : <br>
-                            Tampak wajah 80% (persen), Warna baju/kerudung harus kontras dengan latar belakang, Tidak memakai pakaian dinas, Tidak memakai kacamata, Bagi calon jemaah haji wanita wajib menggunakan busan muslimah.<br>
-                            8. Persyaratan Diatas Dijadikan 1 PDF. <br>
-                            </p>
+                            @foreach ($data as $d)
+                        <td scope="col" class="text-center">{{ $d->no }}</td>
+                        <td scope="col" class="text-center">{{ $d->isi }}</td>
+                        <td scope="col" class="text-center">
+                            <button data-id="{{$d->id}}" data-no="{{$d->no}}" data-isi="{{$d->isi}}" class="btn btn-sm bg-warning" data-toggle="modal" data-target="#modalEdit"> Edit</button>
+                            <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('admincaradelete',$d->id) }}"> Hapus</button>
+                        </td>
+                    @endforeach
 
                             <br>
                             <br>

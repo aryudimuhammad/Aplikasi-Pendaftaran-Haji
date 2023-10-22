@@ -133,47 +133,78 @@
                     <h2 class="mb-5">Tata Cara Pendaftaran Haji</h2>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
-                            <b class="mb-0">PERSYARATAN PENDAFTARAN HAJI</b><br>
-                            <p>
-                            1. Beragama Islam. <br>
-                            2. Berusia Minimal 12 Tahun pada saat pendaftaran. <br>
-                            3. Bagi yang sudah haji, bisa mendaftar kembali setelah 10 (sepuluh) tahun keberangkatan haji terakhir. <br>
-                            4. Scan KTP yang masih berlaku sesuai dengan domisili 3 lembar. <br>
-                            5. Scan Kartu Keluarga 1 lembar.<br>
-                            6. Scan Akte Kelahiran / kutipan akta nikah. <br>
-                            7. Foto terbaru berwarna 3 x dan 4 x 6 = 2 Lembar, dengan latar belakang putih dengan ketentuan : <br>
-                            Tampak wajah 80% (persen), Warna baju/kerudung harus kontras dengan latar belakang, Tidak memakai pakaian dinas, Tidak memakai kacamata, Bagi calon jemaah haji wanita wajib menggunakan busan muslimah.<br>
-                            8. Persyaratan Diatas Dijadikan 1 PDF. <br>
-                            </p>
+                            <b class="mb-5">PERSYARATAN PENDAFTARAN HAJI</b><br>
+<br>
+                                <table class="table">
+                                <tbody>
+                                @foreach ($cara as $d)
+                                    <tr>
+                                        <td scope="col" class="text-center">{{ $d->no }}</td>
+                                        <td scope="col" class="text-left">{{ $d->isi }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                </table>
 
                             <br>
                             <br>
 
-                            <b>PROSEDUR PENDAFTARAN HAJI SECARA ONLINE</b>
-                            <p>
-                            1. Datang ke Bank Penerima Setoran (BPS) Syariah untuk membuka rekening tabungan haji dengan setoran minimal Rp. 25.000.000,- ( dua puluh lima juta rupiah ).<br>
-                            2. Meminta untuk diterbitkan NOMOR VALIDASI oleh Bank (Masa berlaku NOMOR VALIDASI 5 hari kerja terhitung setelah menerima dari BANK).<br>
-                            3. Mengisi data dan mendaftar persyaratan Haji pada <a href="#interests">Kemenag Pendaftaran Haji</a>.<br>
-                            4. Jika Calon Jemaah Haji sudah Menerima Bukti Setoran lunas dari bank penerima setoran. <br>
-                            5. Maka proses administrator dan info mengenai tahun keberangkatan calon jemaah haji akan muncul.
-                            </p>
-                            <br>
-                            <br>
-                            <img src="{{asset('front/sistem.png')}}" alt="usulan" style="width: 1000px;">
-
-                            <br>
-                            <b>BANK PENERIMA SETORAN ( BPS ) SYARIAH</b>
-                            <p>
-                            1. Bank BNI Syariah <br>
-                            2. Bank BRI Syariah <br>
-                            3. Bank Syariah Mandiri <br>
-                            4. Bank Panin Dubai Syariah <br>
-                            5. Bank BTN Syariah <br>
-                            6. Bank Mega Syariah <br>
-                            7. Bank Muamalat <br>
-                            8. Bank CIMB- Niaga Syariah <br>
-                            9. Bank Permata Syariah
-                            </p>
+                            <b class="mb-5">PROSEDUR PENDAFTARAN HAJI</b><br>
+<br>
+                                <table class="table">
+                                <tbody>
+                                    @foreach ($prosedur as $d)
+                                    <tr>
+                                        <td scope="col" class="text-center">{{ $d->no }}</td>
+                                        <td scope="col" class="text-left">{{ $d->isi }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                </table>
+                            <br><br><br>
+                            <b class="mb-5">BANK PENERIMA SETORAN ( BPS ) SYARIAH</b><br><br>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td scope="col" class="text-center">1.</td>
+                                        <td scope="col" class="text-left">Bank BNI Syariah</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">2.</td>
+                                        <td scope="col" class="text-left">Bank BRI Syariah</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">3.</td>
+                                        <td scope="col" class="text-left">Bank Syariah Mandiri</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">4.</td>
+                                        <td scope="col" class="text-left">Bank Panin Dubai Syariah</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">5.</td>
+                                        <td scope="col" class="text-left">Bank BTN Syariah</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">6.</td>
+                                        <td scope="col" class="text-left">Bank Mega Syariah</td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">7.</td>
+                                        <td scope="col" class="text-left">Bank Muamalat </td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">8.</td>
+                                        <td scope="col" class="text-left">Bank CIMB- Niaga Syariah</td>
+                                    </tr>
+                                    <tr>
+                                        <td scope="col" class="text-center">9.</td>
+                                        <td scope="col" class="text-left">Bank Permata Syariah</td>
+                                    </tr>
+                                </tbody>
+                                </table>
                         </div>
                     </div>
                 </div>

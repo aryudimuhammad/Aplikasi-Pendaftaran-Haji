@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cara;
 use App\Models\Kuisioner;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Pendaftaran;
 use App\Models\Pembayaran;
+use App\Models\Prosedur;
 use App\Models\Proseskeberangkatan;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -15,22 +17,25 @@ class PendaftaranController extends Controller
 {
     public function pendaftaran()
     {
+        $cara = Cara::orderby('no', 'asc')->get();
 
         $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
         if($data == null)
         {
+            $prosedur = Prosedur::orderby('no', 'asc')->get();
             $kuisioner = Kuisioner::where('user_id', Auth::user()->id)->first();
             $data1 = Proseskeberangkatan::where('id',1)->first();
             $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
-            return view('welcomeuser', compact('data','data1','kuisioner'));
+            return view('welcomeuser', compact('data','data1','kuisioner','cara','prosedur'));
         }
         else
         {
+            $prosedur = Prosedur::orderby('no', 'asc')->get();
             $kuisioner = Kuisioner::where('user_id', Auth::user()->id)->first();
             $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
             $pembayaran = Pembayaran::where('pendaftaran_id', '=', $data->id)->get();
             $data1 = Proseskeberangkatan::where('id',1)->first();
-            return view('welcomeuser', compact('data', 'pembayaran','data1','kuisioner'));
+            return view('welcomeuser', compact('data', 'pembayaran','data1','kuisioner','cara','prosedur'));
         }
 
     }

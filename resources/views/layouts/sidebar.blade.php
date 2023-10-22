@@ -62,6 +62,13 @@
               <p>Prosedur Pendaftaran</p>
             </a>
           </li>
+
+          <li class="nav-item menu-open">
+            <a href="{{route('adminkuisionerindex')}}" class="nav-link">
+            <i class="fa-sharp fa-solid fa-box-archive"></i>
+              <p>Kritik Dan Saran</p>
+            </a>
+          </li>
         <!-- <li class="nav-item menu-open">
             <a href="#" class="nav-link">
             <i class="fa-sharp fa-solid fa-users"></i>

@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+
             $faker = Faker::create('id_ID');
 
             for ($i = 0; $i < 15; $i++) {

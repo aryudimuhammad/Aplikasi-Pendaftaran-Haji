@@ -404,7 +404,54 @@
             <!-- Kontak Login survey-->
             <section class="resume-section" id="survey">
                 <div class="resume-section-content">
-                    @if ($kuisioner = null)
+                    @if (!empty($kuisioner))
+                    <h2 class="mb-1">Kuisioner</h2>
+            <div class="subheading mb-4 text-primary">
+            Anda Sudah Memberi Saran Dan Kritik Pada Kami!</a></div>
+            <form action="{{route('kuisioner')}}" enctype="multipart/form-data" method="POST">
+                @csrf
+                <div class="col-12 form-group">
+
+                <input type="hidden" name="user_id" id="user_id" value="{{Auth::user()->id}}">
+
+                <label for="gridRadios1">Secara keseluruhan, seberapa puas Anda terhadap website ini?</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Sangat Puas" checked>Sangat Puas<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Cukup Puas" >Cukup Puas<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Biasa Saja" >Biasa Saja<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Kurang" >Kurang<br />
+                <br>
+                <label for="gridRadios2">Apakah Website kami dapat mempermudah anda dalam mendaftar Haji?</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Sangat Mempermudah" >Sangat Mempermudah<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Cukup Mempermudah" >Cukup Mempermudah<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Biasa Saja" >Biasa Saja<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Kurang" >Kurang<br />
+                <br>
+                <label for="gridRadios3">Seberapa responsif pelayanan kami untuk melayani anda?</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Sangat Resnponsif" >Sangat Responsif<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Cukup Responsif" >Cukup Responsif<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Biasa Saja" >Biasa Saja<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Kurang" >Kurang<br />
+                <br>
+                <label for="gridRadios4">Apakah user interface di website ini mudah dipahami dan tidak membingungkan ? </label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Sangat Mudah" >Sangat Mudah<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Cukup Mudah" >Cukup Mudah<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Biasa Saja" >Biasa Saja<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Kurang" >Kurang<br />
+                <br>
+                <label for="gridRadios5">Seberapa besar kemungkinan Anda merekomendasikan website ini?</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Sangat Besar" >Sangat Besar<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Cukup Besar" >Cukup Besar<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Biasa Saja" >Biasa Saja<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Kurang" >Kurang<br />
+                <br>
+
+                <button type="submit" class="btn btn-primary">INGIN MENGUBAH SARAN? KIRIM</button>
+            </form>
+
+
+            @else
+
+
             <form action="{{route('kuisioner')}}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <h2 class="mb-1">Kuisioner</h2>
@@ -449,50 +496,6 @@
                 </div>
                 </div>
             </section>
-            @elseif ($kuisioner = !null)
-            <h2 class="mb-1">Kuisioner</h2>
-            <div class="subheading mb-4 text-primary">
-            Anda Sudah Memberi Saran Dan Kritik Pada Kami!</a></div>
-            <form action="{{route('kuisioner')}}" enctype="multipart/form-data" method="POST">
-                @csrf
-                <div class="col-12 form-group">
-
-                <input type="hidden" name="user_id" id="user_id" value="{{Auth::user()->id}}">
-
-                <label for="gridRadios1">Secara keseluruhan, seberapa puas Anda terhadap website ini?</label><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Sangat Puas" checked>Sangat Puas<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Cukup Puas" >Cukup Puas<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Biasa Saja" >Biasa Saja<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan1" id="pertanyaan1" value="Kurang" >Kurang<br />
-                <br>
-                <label for="gridRadios2">Apakah Website kami dapat mempermudah anda dalam mendaftar Haji?</label><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Sangat Mempermudah" >Sangat Mempermudah<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Cukup Mempermudah" >Cukup Mempermudah<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Biasa Saja" >Biasa Saja<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan2" id="pertanyaan2" value="Kurang" >Kurang<br />
-                <br>
-                <label for="gridRadios3">Seberapa responsif pelayanan kami untuk melayani anda?</label><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Sangat Resnponsif" >Sangat Responsif<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Cukup Responsif" >Cukup Responsif<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Biasa Saja" >Biasa Saja<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan3" id="pertanyaan3" value="Kurang" >Kurang<br />
-                <br>
-                <label for="gridRadios4">Apakah user interface di website ini mudah dipahami dan tidak membingungkan ? </label><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Sangat Mudah" >Sangat Mudah<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Cukup Mudah" >Cukup Mudah<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Biasa Saja" >Biasa Saja<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan4" id="pertanyaan4" value="Kurang" >Kurang<br />
-                <br>
-                <label for="gridRadios5">Seberapa besar kemungkinan Anda merekomendasikan website ini?</label><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Sangat Besar" >Sangat Besar<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Cukup Besar" >Cukup Besar<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Biasa Saja" >Biasa Saja<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="form-check-input" type="radio" name="pertanyaan5" id="pertanyaan5" value="Kurang" >Kurang<br />
-                <br>
-
-                <button type="submit" class="btn btn-primary">INGIN MENGUBAH SARAN? KIRIM</button>
-            </form>
-
             @endif
             <hr class="m-0" />
 

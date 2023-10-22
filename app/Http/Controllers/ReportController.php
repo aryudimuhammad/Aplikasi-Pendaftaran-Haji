@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kuisioner;
 use DB;
 use Carbon\Carbon;
 use App\Models\Pendaftaran;
@@ -246,5 +247,11 @@ class ReportController extends Controller
     {
         $data = Proseskeberangkatan::where('id',1)->first();
         return view('admin.report.proseskeberangkatan9', compact('data'));
+    }
+
+    public function kuisioner()
+    {
+        $data = Kuisioner::orderby('id','desc')->get();
+        return view('admin.report.kuisioner', compact('data'));
     }
 }

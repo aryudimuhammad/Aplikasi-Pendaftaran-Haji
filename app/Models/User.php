@@ -24,6 +24,11 @@ class User extends Authenticatable
         'role',
     ];
 
+    public function kuisioner()
+    {
+        return $this->HasMany(Pendaftaran::class);
+    }
+
     public function pendaftaran()
     {
         return $this->HasMany(Pendaftaran::class);

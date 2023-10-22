@@ -45,6 +45,9 @@ Route::put('/admin/prosedur', [App\Http\Controllers\ProsedurController::class, '
 Route::post('/admin/prosedur', [App\Http\Controllers\ProsedurController::class, 'create'])->name('adminprosesdurcreate');
 Route::delete('/admin/prosedur/{id}', [App\Http\Controllers\ProsedurController::class, 'delete'])->name('adminprosesdurdelete');
 
+Route::get('/admin/kuisioner', [App\Http\Controllers\KuisionerController::class, 'index'])->name('adminkuisionerindex');
+Route::delete('/admin/kuisioner/{id}', [App\Http\Controllers\KuisionerController::class, 'delete'])->name('adminkuisionerdelete');
+
 
 Route::get('/admin/pendaftaran', [App\Http\Controllers\PendaftaranController::class, 'index'])->name('adminpendaftaran');
 Route::post('/admin/pendaftaran', [App\Http\Controllers\PendaftaranController::class, 'create'])->name('adminpendaftarancreate');
@@ -101,4 +104,6 @@ Route::prefix('report')->name('report.')->group(function () {
     Route::get('/cetak/proseskeberangkatan7', [ReportController::class, 'proses7'])->name('proses7');
     Route::get('/cetak/proseskeberangkatan8', [ReportController::class, 'proses8'])->name('proses8');
     Route::get('/cetak/proseskeberangkatan9', [ReportController::class, 'proses9'])->name('proses9');
+
+    Route::get('/cetak/kuisioner', [ReportController::class, 'kuisioner'])->name('kuisioner');
 });

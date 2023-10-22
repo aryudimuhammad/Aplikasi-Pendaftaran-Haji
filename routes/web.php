@@ -30,6 +30,7 @@ Route::group(['middleware' => ['auth', 'Checkrole:2']], function ()
 Route::get('/user', [App\Http\Controllers\PendaftaranController::class, 'pendaftaran'])->name('pendaftaran');
 Route::post('/user/pembayaran', [App\Http\Controllers\PembayaranController::class, 'store'])->name('pembayaranstore');
 Route::post('/user', [App\Http\Controllers\PendaftaranUserController::class, 'store'])->name('pendaftaranstore');
+Route::post('/user/kuisioner', [App\Http\Controllers\PendaftaranUserController::class, 'kuisioner'])->name('kuisioner');
 });
 
 Route::group(['middleware' => ['auth', 'Checkrole:1']], function ()

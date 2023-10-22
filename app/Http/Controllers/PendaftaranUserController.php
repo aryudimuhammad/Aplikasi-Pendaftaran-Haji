@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kuisioner;
 use App\Models\Pendaftaran;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,10 +24,36 @@ class PendaftaranUserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function kuisioner(Request $request)
     {
+        if($data = Kuisioner::where('user_id', $request->user_id)->first())
+        {
+            $data = Kuisioner::where('user_id',$request->user_id)->first();
+            $data->user_id = $request->user_id;
+            $data->pertanyaan1 = $request->pertanyaan1;
+            $data->pertanyaan2 = $request->pertanyaan2;
+            $data->pertanyaan3 = $request->pertanyaan3;
+            $data->pertanyaan4 = $request->pertanyaan4;
+            $data->pertanyaan5 = $request->pertanyaan5;
+            $data->status = 3;
+            $data->update();
+            return redirect()->route('pendaftaran')->withSuccess('Data Berhasil Diubah');
+        }else{
+            $data =  new Kuisioner();
+            $data->user_id = $request->user_id;
+            $data->pertanyaan1 = $request->pertanyaan1;
+            $data->pertanyaan2 = $request->pertanyaan2;
+            $data->pertanyaan3 = $request->pertanyaan3;
+            $data->pertanyaan4 = $request->pertanyaan4;
+            $data->pertanyaan5 = $request->pertanyaan5;
+            $data->status = 2;
+            $data->save();
+            return redirect()->route('pendaftaran')->withSuccess('Data Berhasil Terkirim');
+        }
 
     }
+
+
 
     /**
      * Store a newly created resource in storage.

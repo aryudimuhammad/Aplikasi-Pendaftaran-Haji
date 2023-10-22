@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kuisioner;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Pendaftaran;
@@ -18,16 +19,18 @@ class PendaftaranController extends Controller
         $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
         if($data == null)
         {
+            $kuisioner = Kuisioner::where('user_id', Auth::user()->id)->first();
             $data1 = Proseskeberangkatan::where('id',1)->first();
             $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
-            return view('welcomeuser', compact('data','data1'));
+            return view('welcomeuser', compact('data','data1','kuisioner'));
         }
         else
         {
+            $kuisioner = Kuisioner::where('user_id', Auth::user()->id)->first();
             $data = Pendaftaran::where('user_id', Auth::user()->id)->first();
             $pembayaran = Pembayaran::where('pendaftaran_id', '=', $data->id)->get();
             $data1 = Proseskeberangkatan::where('id',1)->first();
-            return view('welcomeuser', compact('data', 'pembayaran','data1'));
+            return view('welcomeuser', compact('data', 'pembayaran','data1','kuisioner'));
         }
 
     }

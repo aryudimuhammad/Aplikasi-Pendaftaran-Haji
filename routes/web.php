@@ -35,6 +35,17 @@ Route::post('/user/kuisioner', [App\Http\Controllers\PendaftaranUserController::
 
 Route::group(['middleware' => ['auth', 'Checkrole:1']], function ()
 {
+Route::get('/admin/cara', [App\Http\Controllers\CaraController::class, 'index'])->name('admincaraindex');
+Route::put('/admin/cara', [App\Http\Controllers\CaraController::class, 'edit'])->name('admincaraedit');
+Route::post('/admin/cara', [App\Http\Controllers\CaraController::class, 'create'])->name('admincaracreate');
+Route::delete('/admin/cara/{id}', [App\Http\Controllers\CaraController::class, 'delete'])->name('admincaradelete');
+
+Route::get('/admin/prosedur', [App\Http\Controllers\ProsedurController::class, 'index'])->name('adminprosesdurindex');
+Route::put('/admin/prosedur', [App\Http\Controllers\ProsedurController::class, 'edit'])->name('adminprosesduredit');
+Route::post('/admin/prosedur', [App\Http\Controllers\ProsedurController::class, 'create'])->name('adminprosesdurcreate');
+Route::delete('/admin/prosedur/{id}', [App\Http\Controllers\ProsedurController::class, 'delete'])->name('adminprosesdurdelete');
+
+
 Route::get('/admin/pendaftaran', [App\Http\Controllers\PendaftaranController::class, 'index'])->name('adminpendaftaran');
 Route::post('/admin/pendaftaran', [App\Http\Controllers\PendaftaranController::class, 'create'])->name('adminpendaftarancreate');
 Route::get('/admin/pendaftaran/{id}', [App\Http\Controllers\PendaftaranController::class, 'edit'])->name('adminpendaftaranedit');

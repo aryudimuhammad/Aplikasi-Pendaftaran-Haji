@@ -48,6 +48,20 @@
               <p>Proses Keberangkatan</p>
             </a>
           </li>
+
+          <li class="nav-item menu-open">
+            <a href="{{route('admincaraindex')}}" class="nav-link">
+            <i class="fa-sharp fa-solid fa-box-archive"></i>
+              <p>Persyaratan Pendaftaran</p>
+            </a>
+          </li>
+
+          <li class="nav-item menu-open">
+            <a href="{{route('adminprosesdurindex')}}" class="nav-link">
+            <i class="fa-sharp fa-solid fa-box-archive"></i>
+              <p>Prosedur Pendaftaran</p>
+            </a>
+          </li>
         <!-- <li class="nav-item menu-open">
             <a href="#" class="nav-link">
             <i class="fa-sharp fa-solid fa-users"></i>

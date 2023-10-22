@@ -257,5 +257,83 @@ class DatabaseSeeder extends Seeder
                 'imantaqwaisi' => 'Ibadah haji adalah ibadah yang sangat suci dan berat. Maka dari itu lakukan kegiatan-kegiatan yang dapat mperkuat iman dan takwa, misalnya dengan membaca Al-Quran, berdoa, dan mengikuti pengajian. Itu semua akan membantu mempersiapkan diri secara mental dan spiritual sebelum berangkat.',
             ]);
 
+            DB::table('caras')->insert([
+                'id' => 1,
+                'no' => '1',
+                'isi' => 'Beragama Islam.',
+            ]);
+
+            DB::table('caras')->insert([
+                'id' => 2,
+                'no' => '2',
+                'isi' => 'Berusia Minimal 12 Tahun pada saat pendaftaran.',
+            ]);
+
+            DB::table('caras')->insert([
+                'id' => 3,
+                'no' => '3',
+                'isi' => 'Bagi yang sudah haji, bisa mendaftar kembali setelah 10 (sepuluh) tahun keberangkatan haji terakhir.',
+            ]);
+
+            DB::table('caras')->insert([
+                'id' => 4,
+                'no' => '4',
+                'isi' => 'Scan KTP yang masih berlaku sesuai dengan domisili 3 lembar.',
+            ]);
+
+            DB::table('caras')->insert([
+                'id' => 5,
+                'no' => '5',
+                'isi' => 'Scan Kartu Keluarga 1 lembar.',
+            ]);
+
+            DB::table('caras')->insert([
+                'id' => 6,
+                'no' => '6',
+                'isi' => 'Scan Akte Kelahiran / kutipan akta nikah. ',
+            ]);
+
+            DB::table('caras')->insert([
+                'id' => 7,
+                'no' => '7',
+                'isi' => 'Foto terbaru berwarna 3 x dan 4 x 6 = 2 Lembar, dengan latar belakang putih dengan ketentuan : Tampak wajah 80% (persen), Warna baju/kerudung harus kontras dengan latar belakang, Tidak memakai pakaian dinas, Tidak memakai kacamata, Bagi calon jemaah haji wanita wajib menggunakan busan muslimah.',
+            ]);
+
+            DB::table('caras')->insert([
+                'id' => 8,
+                'no' => '8',
+                'isi' => 'Persyaratan Diatas Dijadikan 1 PDF..',
+            ]);
+
+
+            DB::table('prosedurs')->insert([
+                'id' => 1,
+                'no' => '1',
+                'isi' => 'Datang ke Bank Penerima Setoran (BPS) Syariah untuk membuka rekening tabungan haji dengan setoran minimal Rp. 25.000.000,- ( dua puluh lima juta rupiah ).',
+            ]);
+
+            DB::table('prosedurs')->insert([
+                'id' => 2,
+                'no' => '2',
+                'isi' => 'Meminta untuk diterbitkan NOMOR VALIDASI oleh Bank (Masa berlaku NOMOR VALIDASI 5 hari kerja terhitung setelah menerima dari BANK).',
+            ]);
+
+            DB::table('prosedurs')->insert([
+                'id' => 3,
+                'no' => '3',
+                'isi' => 'Mengisi data dan mendaftar persyaratan Haji pada link Kemenag Pendaftaran Haji.',
+            ]);
+
+            DB::table('prosedurs')->insert([
+                'id' => 4,
+                'no' => '4',
+                'isi' => 'Jika Calon Jemaah Haji sudah Menerima Bukti Setoran lunas dari bank penerima setoran.',
+            ]);
+
+            DB::table('prosedurs')->insert([
+                'id' => 5,
+                'no' => '5',
+                'isi' => 'Maka proses administrator dan info mengenai tahun keberangkatan calon jemaah haji akan muncul.',
+            ]);
     }
 }

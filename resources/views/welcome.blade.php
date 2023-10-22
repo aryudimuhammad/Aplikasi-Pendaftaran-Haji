@@ -19,7 +19,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Tentang</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/user">Persiapan Haji</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#cara">Tata Cara Pendaftaran</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/user">Tata Cara Pendaftaran</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/user">Pendaftaran Haji</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{route('adminpendaftaran')}}">Admin</a></li>
@@ -125,54 +125,6 @@
             </section> -->
             <hr class="m-0" />
             <!-- cara-->
-            <section class="resume-section" id="cara">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">Tata Cara Pendaftaran Haji</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <b class="mb-0">PERSYARATAN PENDAFTARAN HAJI</b><br>
-                            @foreach ($data as $d)
-                        <td scope="col" class="text-center">{{ $d->no }}</td>
-                        <td scope="col" class="text-center">{{ $d->isi }}</td>
-                        <td scope="col" class="text-center">
-                            <button data-id="{{$d->id}}" data-no="{{$d->no}}" data-isi="{{$d->isi}}" class="btn btn-sm bg-warning" data-toggle="modal" data-target="#modalEdit"> Edit</button>
-                            <button data-target="#modaldelete" data-toggle="modal" type="button" class="delete btn btn-sm bg-danger" data-link="{{ route('admincaradelete',$d->id) }}"> Hapus</button>
-                        </td>
-                    @endforeach
-
-                            <br>
-                            <br>
-
-                            <b>PROSEDUR PENDAFTARAN HAJI SECARA ONLINE</b>
-                            <p>
-                            1. Datang ke Bank Penerima Setoran (BPS) Syariah untuk membuka rekening tabungan haji dengan setoran minimal Rp. 25.000.000,- ( dua puluh lima juta rupiah ).<br>
-                            2. Meminta untuk diterbitkan NOMOR VALIDASI oleh Bank (Masa berlaku NOMOR VALIDASI 5 hari kerja terhitung setelah menerima dari BANK).<br>
-                            3. Mengisi data dan mendaftar persyaratan Haji pada <a href="#interests">Kemenag Pendaftaran Haji</a>.<br>
-                            4. Jika Calon Jemaah Haji sudah Menerima Bukti Setoran lunas dari bank penerima setoran. <br>
-                            5. Maka proses administrator dan info mengenai tahun keberangkatan calon jemaah haji akan muncul.
-                            </p>
-                            <br>
-                            <br>
-                            <img src="{{asset('front/sistem.png')}}" alt="usulan" style="width: 1000px;">
-
-                            <br>
-                            <b>BANK PENERIMA SETORAN ( BPS ) SYARIAH</b>
-                            <p>
-                            1. Bank BNI Syariah <br>
-                            2. Bank BRI Syariah <br>
-                            3. Bank Syariah Mandiri <br>
-                            4. Bank Panin Dubai Syariah <br>
-                            5. Bank BTN Syariah <br>
-                            6. Bank Mega Syariah <br>
-                            7. Bank Muamalat <br>
-                            8. Bank CIMB- Niaga Syariah <br>
-                            9. Bank Permata Syariah
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
 
             <!-- Kontak Login Awards-->
             <section class="resume-section" id="awards">

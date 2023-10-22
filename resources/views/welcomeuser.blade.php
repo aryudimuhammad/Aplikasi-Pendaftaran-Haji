@@ -134,7 +134,7 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <b class="mb-5">PERSYARATAN PENDAFTARAN HAJI</b><br>
-<br>
+                                                        <br>
                                 <table class="table">
                                 <tbody>
                                 @foreach ($cara as $d)
@@ -150,7 +150,7 @@
                             <br>
 
                             <b class="mb-5">PROSEDUR PENDAFTARAN HAJI</b><br>
-<br>
+                                                                    <br>
                                 <table class="table">
                                 <tbody>
                                     @foreach ($prosedur as $d)
